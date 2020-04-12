@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  // watch: true,
   mode: 'development',
   entry: './src/js/app.js',
   output: {
@@ -32,4 +31,5 @@ module.exports = {
       }
     ]
   },
+  devtool: 'source-map'
 };
