@@ -1,16 +1,39 @@
-const webpack = require('webpack');
+const MODE = "development";
+const userSourceMap = MODE === "development";
+
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  entry: './src/js/app.js',
+  mode: MODE,
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'public/js')
   },
   module: {
     rules: [
-      // babelの設定
+      // Sassファイルの読み込みとコンパイル
+      {
+        test: /\.scss/, // 対象となるファイルの拡張子
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: userSourceMap,
+              importLoaders: 2
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: userSourceMap,
+            }
+          }
+        ]
+      },
+      // jsのコンパイル
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -23,6 +46,7 @@ module.exports = {
           }
         ]
       },
+      // EsLintの設定
       {
         enforce: 'pre',
         test: /\.js$/,
