@@ -3,34 +3,46 @@ const userSourceMap = MODE === "development";
 
 const path = require('path');
 
+// cssファイル吐き出す版を使う時に読み込むプラグイン
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
   mode: MODE,
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'public/js')
+    path: path.join(__dirname, 'public')
   },
   module: {
     rules: [
       // Sassファイルの読み込みとコンパイル
       {
         test: /\.scss/, // 対象となるファイルの拡張子
+        // シンプル版
+        // use:['style-loader','css-loader','sass-loader'],
+        // ソースマップ付いてる版
+        // use: [
+        //   'style-loader',
+        //   {
+        //     loader: 'css-loader',
+        //     options: {
+        //       url: false,
+        //       sourceMap: userSourceMap,
+        //       importLoaders: 2
+        //     },
+        //   },
+        //   {
+        //     loader: 'sass-loader',
+        //     options: {
+        //       sourceMap: userSourceMap,
+        //     }
+        //   }
+        // ]
+        // cssファイル吐き出す版
         use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              url: false,
-              sourceMap: userSourceMap,
-              importLoaders: 2
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: userSourceMap,
-            }
-          }
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
         ]
       },
       // jsのコンパイル
@@ -55,5 +67,11 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  plugins: [
+    // cssファイル吐き出す版を使う時の設定
+    new MiniCssExtractPlugin({
+      filename: './css/style.css'
+    })
+  ]
 };
