@@ -20,31 +20,43 @@ module.exports = {
       // Sassファイルの読み込みとコンパイル
       {
         test: /\.scss/, // 対象となるファイルの拡張子
-        // シンプル版
-        // use:['style-loader','css-loader','sass-loader'],
-        // ソースマップ付いてる版
-        // use: [
-        //   'style-loader',
-        //   {
-        //     loader: 'css-loader',
-        //     options: {
-        //       url: false,
-        //       sourceMap: userSourceMap,
-        //       importLoaders: 2
-        //     },
-        //   },
-        //   {
-        //     loader: 'sass-loader',
-        //     options: {
-        //       sourceMap: userSourceMap,
-        //     }
-        //   }
-        // ]
-        // cssファイル吐き出す版
+        // cssをjsにバンドルしつつ、ソースマップを付与する
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: true,
+              sourceMap: userSourceMap,
+              importLoaders: 2
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: userSourceMap,
+            }
+          }
+        ]
+        // cssをjsにバンドルせずにファイル吐き出す
+        // use: [
+        //   MiniCssExtractPlugin.loader,
+        //   'css-loader',
+        //   'sass-loader',
+        // ]
+      },
+      // sassファイル内でurl指定している画像のバンドル
+      // limit以下のファイルはjsにバンドル化
+      {
+        test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 100 * 1024, // 100KB以上だったら埋め込まずファイルとして分離する
+              name: './img/[name].[ext]'
+            }
+          }
         ]
       },
       // jsのコンパイル
@@ -76,16 +88,11 @@ module.exports = {
       filename: './css/style.css'
     }),
     new BrowserSyncPlugin({
-      // browse to http://localhost:3000/ during development,
-      // ./public directory is being served
-      host: 'localhost',
-      port: 3000,
       server: { baseDir: ['public'] },
       files: [
         "src",
         "public/index.html"
       ]
     })
-
   ]
 };
