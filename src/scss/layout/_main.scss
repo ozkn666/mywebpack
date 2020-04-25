@@ -2,6 +2,9 @@
   width: 100%;
   min-width: $main-column;
   background-color: $base-color1;
+  .p-section__image-text:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
 }
 
 

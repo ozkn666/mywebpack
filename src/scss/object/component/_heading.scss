@@ -1,7 +1,15 @@
-.heading {
+.c-heading {
   margin: 0;
   padding: 0;
   &__main {
     font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: $breakpoint-sp) {
+  .c-heading {
+    &__main {
+      font-size: getSpVw(30);
+    }
   }
 }

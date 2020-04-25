@@ -1,11 +1,24 @@
 .c-card {
   width: 25%;
-  .heading__main {
+  .c-heading__main {
     text-align: center;
     margin-bottom: 3.0rem;
   }
   img {
     border-radius: 50%;
     margin-bottom: 3.0rem;
+  }
+}
+
+@media screen and (max-width: $breakpoint-sp) {
+  .c-card {
+    width: 70%;
+    margin: 0 auto;
+    .c-heading__main {
+      margin-bottom: getSpVw(30);
+    }
+  }
+  .c-card + .c-card {
+    margin-top: getSpVw(30);
   }
 }

@@ -20,11 +20,12 @@
 
 @media screen and (max-width: $breakpoint-sp) {
   .c-logo {
+    width: 80%;
     h1 {
       font-size: getSpVw(40);
     }
     span {
-      font-size: 1.0rem;
+      font-size: getSpVw(10);
     }
   }
 }

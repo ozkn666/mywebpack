@@ -37,3 +37,9 @@ $heading-font2: 'Noto Sans JP','M PLUS 1p', 'Hiragino Kaku Gothic ProN','ヒラ�
 @function getSpVw($px, $breakpoint: 480) {
   @return (100 / $breakpoint) * $px * 1vw;
 }
+
+/*======================
+// スマホ表示時のサイドの共通padding
+====================== */
+
+$sp-pdx: getSpVw(10);

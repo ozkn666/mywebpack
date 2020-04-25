@@ -11,3 +11,12 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: $breakpoint-sp) {
+  .c-menu {
+    font-size: getSpVw(16);
+    dt, dd {
+      margin-bottom: getSpVw(20);
+    }
+  }
+}
