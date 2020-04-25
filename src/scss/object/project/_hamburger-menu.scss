@@ -1,0 +1,31 @@
+.p-hamburger-menu {
+  display: none;
+}
+
+@media screen and (max-width: $breakpoint-sp) {
+  .p-hamburger-menu {
+    display: block;
+    position: fixed;
+    top: getSpVw(10);
+    right: getSpVw(10);
+    z-index: 10;
+    padding: 0;
+    background-color: unset;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+
+    span {
+        background-color: $text-color1;
+        width: getSpVw(50);
+        height: getSpVw(4);
+        display: block;
+        margin-bottom: getSpVw(14);
+        transition: transform 0.7s;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+  }
+}
