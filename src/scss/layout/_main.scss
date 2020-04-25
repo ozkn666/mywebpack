@@ -1,3 +1,12 @@
 .l-main {
   width: 100%;
+  min-width: $main-column;
+  background-color: $base-color1;
+}
+
+
+@media screen and (max-width: $breakpoint-sp) {
+  .l-main {
+    min-width: 100%;
+  }
 }

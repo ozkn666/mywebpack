@@ -1,0 +1,61 @@
+.p-section {
+  margin: 0 auto;
+  &__center {
+    @extend .p-section;
+    width: 50%;
+    padding: 6.0rem 0;
+    .heading__main {
+      text-align: center;
+      margin-bottom: 3.0rem;
+    }
+  }
+  &__image-text {
+    @extend .p-section;
+    display: flex;
+    align-items: center;
+    background-color: $base-color2;
+    img {
+      width: 50%;
+    }
+    &__content {
+      width: 50%;
+      .heading__main {
+        text-align: center;
+        margin-bottom: 3.0rem;
+      }
+      p {
+        width: 80%;
+        margin: 0 auto;
+      }
+      p + p {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+  &__cards {
+    width: 100%;
+    &__inner {
+      width: 60%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      padding: 6.0rem 0;
+    }
+  }
+  &__about {
+    width: 100%;
+    background-color: $base-color2;
+    &__inner {
+      width: 50%;
+      margin: 0 auto;
+      padding: 6.0rem 0;
+      display: flex;
+      .c-menu {
+        width: 50%;
+      }
+      .c-map {
+        width: 50%;
+      }
+    }
+  }
+}

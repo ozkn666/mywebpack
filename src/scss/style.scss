@@ -24,16 +24,9 @@
 // Layout
 ======================*/
 
-// top navigation
 @import "layout/nav";
-
-// header
 @import "layout/header";
-
-// main column
 @import "layout/main";
-
-// footer
 @import "layout/footer";
 
 
@@ -45,15 +38,19 @@
 Component
 =========*/
 
-// top navigation list
 @import "object/component/nav-item";
+@import "object/component/copyright";
+@import "object/component/heading";
+@import "object/component/card";
+@import "object/component/logo";
+@import "object/component/menu";
+@import "object/component/map";
 
 /*========
 Project
 =========*/
-
-// top navigation lists
 @import "object/project/nav-list";
+@import "object/project/section";
 
 
 /*========

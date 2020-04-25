@@ -1,4 +1,9 @@
 .c-nav-item {
+  display: inline-block;
   font-size: 1.4rem;
   padding: 2.0rem 1.0rem;
+  font-weight: bold;
+  a {
+    color: $text-color1;
+  }
 }
