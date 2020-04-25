@@ -1,0 +1,94 @@
+@charset "UTF-8";
+.sp {
+  display: none!important;
+}
+
+/* micro clearfx */
+.cf:before,
+.cf:after{
+  content: "";
+  display: table;
+}
+.cf:after{ clear: both; }
+.cf{ zoom: 1; } /* For IE 6/7 */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Helvetica Neue", Arial, "Hiragino Sans", Meiryo, sans-serif;
+  position: relative;
+}
+
+p {
+  color: $text-color1;
+  font-size: 1.6rem;
+  margin: 0;
+}
+p + p {
+  margin-top: 2.5rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $text-color2;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: $text-color2;
+  text-decoration: none;
+  opacity: .6;
+  transition: .2s;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $heading-font;
+  font-weight: bold;
+  color: $text-color1;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  color: $text-color1;
+}
+
+
+
+@media screen and (max-width: $breakpoint-sp) {
+  /* SP */
+  .sp {
+    display: block!important;
+  }
+  .pc {
+    display: none!important;
+  }
+
+  body {
+    font-size: 4vw;
+  }
+
+  p {
+    font-size: 4vw;
+  }
+}

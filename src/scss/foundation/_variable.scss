@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/*======================
+// ブレイクポイント
+====================== */
+
+// PC
+$breakpoint-pc: 481px;
+
+// SP
+$breakpoint-sp: 480px;
+
+
+/*======================
+// PCメインカラムの横幅
+====================== */
+
+// 1カラム
+$main-column1: 1100px;
+
+// 2カラム
+$main-column2: 760px;
+
+
+/*======================
+// 画像パス
+====================== */
+
+$imgPath: "../img/";
+
+
+/*======================
+// フォント
+====================== */
+
+$heading-font: 'M PLUS 1p', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo', 'sans-serif';
+
+$heading-font2: 'Noto Sans JP','M PLUS 1p', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo', 'sans-serif';
+
+
+/*======================
+// px => vw変換
+====================== */
+
+@function getSpVw($px) {
+  @return 100 / #{$breakpoint-sp} * $px * 1vw;
+}
