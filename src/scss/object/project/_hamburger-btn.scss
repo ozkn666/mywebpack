@@ -1,0 +1,50 @@
+.p-hamburger-btn {
+  display: none;
+}
+
+@media screen and (max-width: $breakpoint-sp) {
+  .p-hamburger-btn {
+    display: block;
+    position: fixed;
+    top: getSpVw(10);
+    right: getSpVw(10);
+    z-index: 40;
+    padding: 0;
+    background-color: unset;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+
+    span {
+        background-color: $text-color1;
+        width: getSpVw(50);
+        height: getSpVw(4);
+        display: block;
+        margin-bottom: getSpVw(14);
+        transition: transform 0.7s;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__open {
+      .p-hamburger-btn {
+        span {
+          &:nth-child(1) {
+              transition-delay: 70ms;
+              transform: translateY(getSpVw(18)) rotate(135deg);
+          }
+          &:nth-child(2) {
+              transition-delay: 0s;
+              transform:  translateX(getSpVw(18)) scaleX(0);
+          }
+          &:nth-child(3) {
+              transition-delay: 140ms;
+              transform: translateY(getSpVw(-18)) rotate(-135deg);
+          }
+        }
+      }
+    }
+  }
+}

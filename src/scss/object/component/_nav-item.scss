@@ -7,3 +7,12 @@
     color: $text-color1;
   }
 }
+
+@media screen and (max-width: $breakpoint-sp) {
+  .c-nav-item {
+    display: block;
+    padding: getSpVw(20) getSpVw(20);
+    border-bottom: 1px solid $text-color1;
+    font-size: getSpVw(16);
+  }
+}

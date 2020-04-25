@@ -4,50 +4,19 @@
 
 @media screen and (max-width: $breakpoint-sp) {
   .p-hamburger-menu {
-    display: block;
+    width: 100%;
     position: fixed;
-    top: getSpVw(10);
-    right: getSpVw(10);
-    z-index: 10;
-    padding: 0;
-    background-color: unset;
-    border: none;
-    outline: none !important;
-    cursor: pointer;
-
-    span {
-        background-color: $text-color1;
-        width: getSpVw(50);
-        height: getSpVw(4);
-        display: block;
-        margin-bottom: getSpVw(14);
-        transition: transform 0.7s;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    &__open {
-      background-color: $text-color1 !important;
-      .p-hamburger-menu {
-        span {
-          background-color: #fff;
-  
-          &:nth-child(1) {
-              transition-delay: 70ms;
-              transform: translateY(17px) rotate(135deg);
-          }
-          &:nth-child(2) {
-              transition-delay: 0s;
-              transform:  translateX(18px) scaleX(0);
-          }
-          &:nth-child(3) {
-              transition-delay: 140ms;
-              transform: translateY(-17px) rotate(-135deg);
-          }
-        }
-      }
+    display: block;
+    top: 0;
+    z-index: 30;
+    background-color: $base-color1;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.7s ease-in-out;
+    &--open {
+      // display: block;
+      max-height: 66.66667vh;
+      transition: all 0.7s ease-in-out;
     }
   }
 }
