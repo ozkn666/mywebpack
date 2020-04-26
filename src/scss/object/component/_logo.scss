@@ -8,14 +8,25 @@
   padding: 0;
   text-align: center;
   h1 {
-    font-size: 6.0rem;
+    font-size: getPcVw(100);
     color: $text-color3;
     font-family: 'Shadows Into Light', cursive;
   }
   span {
-    font-size: 2.0rem;
+    font-size: getPcVw(20);
     color: $text-color3;
     font-family: 'Noto Serif JP', serif;
+  }
+}
+
+@media screen and (max-width: $breakpoint-pc) {
+  .c-logo {
+    h1 {
+      font-size: 10.0rem;
+    }
+    span {
+      font-size: 2.0rem;
+    }
   }
 }
 
@@ -24,10 +35,10 @@
   .c-logo {
     width: 80%;
     h1 {
-      font-size: getSpVw(40);
+      font-size: getSpVw(60);
     }
     span {
-      font-size: getSpVw(10);
+      font-size: getSpVw(20);
     }
   }
 }

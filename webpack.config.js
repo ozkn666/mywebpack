@@ -94,7 +94,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: './css/style.css'
     }),
+    // プラグインを追加する時はここに記述
     new webpack.ProvidePlugin({
+      WOW: 'wow.js',
       $: 'jquery',
       jQuery: 'jquery'
     }),
