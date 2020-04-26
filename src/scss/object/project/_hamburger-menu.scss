@@ -13,9 +13,8 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.7s ease-in-out;
-    &--open {
-      // display: block;
-      max-height: 66.66667vh;
+    &__open {
+      max-height: 84vh;
       transition: all 0.7s ease-in-out;
     }
   }
