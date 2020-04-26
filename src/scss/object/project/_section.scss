@@ -58,6 +58,18 @@
       }
     }
   }
+  &__contact {
+    width: 100%;
+    padding: 6.0rem 0 0;
+    .c-heading__main {
+      text-align: center;
+      margin-bottom: 3.0rem;
+    }
+    &__inner {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
 }
 
 @media screen and (max-width: $breakpoint-sp) {
@@ -100,6 +112,16 @@
         .c-menu,
         .c-map {
           width: 100%;
+        }
+      }
+    }
+    &__contact {
+      width: 100%;
+      padding: getSpVw(60) $sp-pdx 0; 
+      &__inner {
+        width: 100%;
+        .c-heading__main {
+          margin-bottom: getSpVw(30);
         }
       }
     }
