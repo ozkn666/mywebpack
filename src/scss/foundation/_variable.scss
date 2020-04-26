@@ -3,15 +3,11 @@
 /*======================
 // ブレイクポイント
 ====================== */
+//PC
+$breakpoint-pc: 1200px;
 
 // SP
 $breakpoint-sp: 480px;
-
-/*======================
-// PCメインカラムの横幅
-====================== */
-
-$main-column: 1200px;
 
 
 /*======================
@@ -33,6 +29,10 @@ $heading-font2: 'Noto Sans JP','M PLUS 1p', 'Hiragino Kaku Gothic ProN','ヒラ�
 /*======================
 // px => vw変換
 ====================== */
+
+@function getPcVw($px, $breakpoint: 1200) {
+  @return (100 / $breakpoint) * $px * 1vw;
+}
 
 @function getSpVw($px, $breakpoint: 480) {
   @return (100 / $breakpoint) * $px * 1vw;

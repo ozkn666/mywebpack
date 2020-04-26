@@ -1,6 +1,6 @@
 .l-main {
   width: 100%;
-  min-width: $main-column;
+  min-width: $breakpoint-pc;
   background-color: $base-color1;
   .p-section__image-text:nth-child(odd) {
     flex-direction: row-reverse;
