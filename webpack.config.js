@@ -1,12 +1,19 @@
 const MODE = "development";
 const userSourceMap = MODE === "development";
 
+// ファイル出力時の絶対パス指定に使用
 const path = require('path');
 
 // cssファイル吐き出す版を使う時に読み込むプラグイン
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+// jQueryで使用
+const webpack = require('webpack');
+
+// BrowserSyncPlugin
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+
+
 
 module.exports = {
   mode: MODE,
@@ -86,6 +93,9 @@ module.exports = {
     // cssファイル吐き出す版を使う時の設定
     new MiniCssExtractPlugin({
       filename: './css/style.css'
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery'
     }),
     new BrowserSyncPlugin({
       server: { baseDir: ['public'] },
