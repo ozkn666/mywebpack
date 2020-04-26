@@ -95,7 +95,8 @@ module.exports = {
       filename: './css/style.css'
     }),
     new webpack.ProvidePlugin({
-      $: 'jquery'
+      $: 'jquery',
+      jQuery: 'jquery'
     }),
     new BrowserSyncPlugin({
       server: { baseDir: ['public'] },
