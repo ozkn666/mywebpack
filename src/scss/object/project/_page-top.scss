@@ -1,0 +1,27 @@
+.p-page-top {
+  position: fixed;
+  bottom: 7rem;
+  right: 7rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #1e1e1ec9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__icon {
+    color: $base-color2;
+  }
+}
+
+@media screen and (max-width: $breakpoint-sp) {
+  .p-page-top {
+    bottom: getSpVw(20);
+    right: getSpVw(20);
+    width: getSpVw(60);
+    height: getSpVw(60);
+    &__icon {
+      font-size: getSpVw(30);
+    }
+  }
+}
