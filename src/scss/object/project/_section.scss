@@ -3,8 +3,8 @@
   &__center {
     @extend .p-section;
     width: 50%;
-    padding: 6.0rem 0;
-    .c-heading__main {
+    padding-top: 6.0rem;
+    .c-heading {
       text-align: center;
       margin-bottom: 3.0rem;
     }
@@ -39,7 +39,7 @@
       margin: 0 auto;
       display: flex;
       justify-content: space-around;
-      padding: 6.0rem 0;
+      padding-bottom: 6.0rem;
     }
   }
   &__about {
@@ -76,8 +76,8 @@
   .p-section {
     &__center {
       width: 100%;
-      padding: getSpVw(60) $sp-pdx;
-      .c-heading__main {
+      padding: getSpVw(60) $sp-pdx 0;
+      .c-heading {
         margin-bottom: getSpVw(30);
       }
     }
@@ -101,7 +101,7 @@
       &__inner {
         width: 100%;
         display: block;
-        padding: getSpVw(60) 0;
+        padding: 0 0 getSpVw(60);
       }
     }
     &__about {

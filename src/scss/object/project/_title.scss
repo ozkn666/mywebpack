@@ -1,0 +1,13 @@
+.p-title {
+  width: 100%;
+  padding: 6.0rem 0;
+  .c-heading {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $breakpoint-sp) {
+  .p-title {
+    padding: getSpVw(60) 0;
+  }
+}

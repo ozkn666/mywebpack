@@ -1,6 +1,7 @@
 .c-heading {
   margin: 0;
   padding: 0;
+  font-size: 3.0rem;
   &__main {
     font-size: 2.2rem;
   }
@@ -8,6 +9,7 @@
 
 @media screen and (max-width: $breakpoint-sp) {
   .c-heading {
+    font-size: getSpVw(34);
     &__main {
       font-size: getSpVw(30);
     }
