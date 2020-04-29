@@ -1,0 +1,18 @@
+.c-spinner {
+  width: 10rem;
+  height: 10rem;
+  transition: all 1s;
+  background-color: #000;
+  border-radius: 100%;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
