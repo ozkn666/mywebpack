@@ -79,13 +79,13 @@ module.exports = {
           }
         ]
       },
-      // EsLintの設定
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader'
-      }
+      // // EsLintの設定
+      // {
+      //   enforce: 'pre',
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   loader: 'eslint-loader'
+      // }
     ]
   },
   devtool: 'source-map',
